@@ -1,0 +1,106 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+html,
+body {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+.page {
+  height: var(--vh);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-400);
+  font-style: normal;
+  font-size: clamp(18px, 2vi, 20px);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-grey-880);
+  background-color: var(--color-white);
+  font-optical-sizing: auto;
+
+  &--rental {
+    .section--featured {
+      :nth-last-child(2) {
+        margin-bottom: 0;
+      }
+
+      .btn {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    min-width: 320px;
+    min-height: var(--vh);
+  }
+
+  &.open {
+    overflow: hidden;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+
+  &--large {
+    max-width: var(--container-large);
+
+    @include media(tablet) {
+      max-width: var(--container-width);
+    }
+  }
+}
+
+.site-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: var(--vh);
+}
+
+.main {
+  padding-top: var(--header-height);
+}
+
+.section {
+  padding: clamp(40px, 12vw, 112px) 0;
+}
+
+.overlay {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+  }
+
+  @include media(tablet) {
+    &::before {
+      background-color: var(--color-grey-970);
+    }
+  }
+}
+
+.form {
+  max-width: 481px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 0;
+}
+
+label {
+  display: block;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
