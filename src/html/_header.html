@@ -1,0 +1,82 @@
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="logo" href="index.html">
+        <img class="logo__img" src="./images/logo.svg" alt="Favela Trips Bogota logo" width="210" height="32">
+      </a>
+
+      <button class="burger" aria-label="Mobile menu" type="button"><span></span></button>
+
+      <div class="nav__inner">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'home' }}" href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'about-us' }}" href="about-us.html">
+              About Us
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'tours' }}" href="tours.html">
+              Tours
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'favelas' }}" href="favelas.html">
+              Favelas
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'responsible-tourism' }}" href="responsible-tourism.html">
+              Responsible Tourism
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link {{ page === 'faq' }}" href="faq.html">
+              FAQ
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav__btns">
+          <a class="btn" href="sign-up.html">
+            Sign Up
+          </a>
+
+          <button class="btn btn--bordered request-btn" type="button" formsappId="664f09cf033ee124ef56db3b">
+            Explore
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const startHeightValue = () => {
+    let vh = window.innerHeight * 1;
+    document.querySelector(':root').style.setProperty('--vh', `${vh}px`);
+
+    const pageHeader = document.querySelector('.header');
+
+    const headerHeight = pageHeader ? pageHeader.offsetHeight : 0;
+
+    document.documentElement.style.setProperty(
+      '--header-height',
+      `${headerHeight}px`,
+    );
+  };
+
+  window.addEventListener('resize', startHeightValue);
+  window.addEventListener('scroll', startHeightValue);
+
+  startHeightValue();
+</script>
