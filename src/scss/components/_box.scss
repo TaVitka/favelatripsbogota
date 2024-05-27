@@ -1,0 +1,120 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.box {
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+  }
+
+  &--asides {
+    .box__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 563px;
+
+      &::before,
+      &::after {
+        @include cover-background;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        max-width: 470px;
+        width: 100%;
+        border-radius: var(--radius-main);
+      }
+
+      &::before {
+        background-image: url("../images/home/about/city.jpg");
+        left: -16px;
+      }
+
+      &::after {
+        background-image: url("../images/home/about/girl.jpg");
+        right: -16px;
+      }
+    }
+
+    .box__content {
+      max-width: 502px;
+      width: 100%;
+      margin-inline: auto;
+      padding: clamp(10px, 2.4vw, 32px);
+      text-align: center;
+      background-color: var(--color-white);
+      border-radius: var(--radius-main);
+
+      h2 {
+        margin-bottom: 8px;
+      }
+
+      &--btn {
+        .box__texts {
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &--asides {
+      .box__inner {
+        min-height: 450px;
+
+        &::before,
+        &::after {
+          max-width: 250px;
+          border-radius: var(--radius-l);
+        }
+      }
+
+      .box__content {
+        border-radius: var(--radius-l);
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &--asides {
+      .box__inner {
+        min-height: 500px;
+        padding-top: clamp(100px, 25vw, 200px);
+        padding-bottom: clamp(100px, 25vw, 200px);
+
+        &::before,
+        &::after {
+          top: unset;
+          bottom: unset;
+          left: 0;
+          right: 0;
+          height: clamp(200px, 40vw, 300px);
+          max-width: 100%;
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &--asides {
+      .box__inner {
+        min-height: 450px;
+
+        &::after {
+          background-position: top;
+        }
+      }
+    }
+  }
+}

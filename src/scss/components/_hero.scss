@@ -52,11 +52,17 @@
     }
   }
 
-  @include media(mobile-l) {
+  @include media(mobile-m) {
     &__content {
       .btn {
         display: block;
       }
+    }
+  }
+
+  @include media(mobile-s) {
+    &__content {
+      text-align: center;
     }
   }
 }
