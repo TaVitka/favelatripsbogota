@@ -12,7 +12,7 @@ body {
   font-family: var(--font-family-primary);
   font-weight: var(--fw-400);
   font-style: normal;
-  font-size: clamp(18px, 2vi, 20px);
+  font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0;
   color: var(--color-grey-880);
@@ -68,7 +68,7 @@ body {
 }
 
 .section {
-  padding: clamp(40px, 12vw, 112px) 0;
+  padding: clamp(40px, 8vw, 112px) 0;
 }
 
 .overlay {
