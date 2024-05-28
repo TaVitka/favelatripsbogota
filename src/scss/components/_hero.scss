@@ -30,6 +30,10 @@
     h1 {
       margin-bottom: 8px;
     }
+
+    .desc {
+      width: 100%;
+    }
   }
 
   &--home {
@@ -38,7 +42,6 @@
 
       .desc {
         max-width: 379px;
-        width: 100%;
         margin-bottom: clamp(16px, 2.4vw, 32px);
       }
     }
@@ -50,7 +53,6 @@
 
       .desc {
         max-width: 540px;
-        width: 100%;
       }
     }
   }
@@ -70,6 +72,16 @@
       .desc {
         max-width: 540px;
         width: 100%;
+      }
+    }
+  }
+
+  &--tours {
+    .hero__content {
+      max-width: 705px;
+
+      .desc {
+        max-width: 555px;
       }
     }
   }

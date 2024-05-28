@@ -78,6 +78,19 @@
     }
   }
 
+  &--offers {
+    .slider__inner {
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .slider__name {
+      h2 {
+        margin-inline: 0;
+      }
+    }
+  }
+
   @include media(tablet-wide) {
     &__main {
       max-width: 93vw;
