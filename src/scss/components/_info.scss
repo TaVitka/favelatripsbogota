@@ -1,10 +1,9 @@
 @use "../utils/functions/"as*;
 @use "../utils/mixins/"as*;
 
-.reviews {
-  h2 {
-    margin-bottom: clamp(32px, 3.4vw, 48px);
-    text-align: center;
+.info {
+  &__title {
+    margin-bottom: 8px;
   }
 
   &__grid {
@@ -20,14 +19,46 @@
     img {
       margin-bottom: clamp(20px, 2vw, 30px);
     }
+  }
 
-    h3 {
-      margin-bottom: 8px;
-      font-family: var(--font-family-primary);
-      font-size: 18px;
-      line-height: 1.5;
-      font-weight: var(--fw-700);
-      color: var(--color-dark);
+  &__name {
+    margin-bottom: 8px;
+    font-family: var(--font-family-primary);
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: var(--fw-700);
+    color: var(--color-dark);
+  }
+
+  &--reviews {
+    h2 {
+      margin-bottom: clamp(32px, 3.4vw, 48px);
+      text-align: center;
+    }
+  }
+
+  &--inspiration {
+    .info__texts {
+      max-width: 596px;
+      width: 100%;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  &--approach {
+    .info__item {
+      * {
+        color: var(--color-grey-880);
+      }
+
+      h3 {
+        margin-bottom: 18px;
+      }
     }
   }
 
@@ -51,6 +82,14 @@
     &__item {
       &:last-of-type {
         grid-column: span 2;
+      }
+    }
+
+    &--inspiration {
+      .info__texts {
+        max-width: 100%;
+        margin-inline: 0;
+        text-align: left;
       }
     }
   }

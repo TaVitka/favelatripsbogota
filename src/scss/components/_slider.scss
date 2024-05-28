@@ -66,6 +66,18 @@
     }
   }
 
+  &--team {
+    .slider__name {
+      h2 {
+        padding-bottom: 32px;
+      }
+    }
+
+    .slider__arrows {
+      bottom: clamp(0px, 5vw, 72px)
+    }
+  }
+
   @include media(tablet-wide) {
     &__main {
       max-width: 93vw;

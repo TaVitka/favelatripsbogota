@@ -19,18 +19,6 @@ body {
   background-color: var(--color-white);
   font-optical-sizing: auto;
 
-  &--rental {
-    .section--featured {
-      :nth-last-child(2) {
-        margin-bottom: 0;
-      }
-
-      .btn {
-        display: none;
-      }
-    }
-  }
-
   &__body {
     min-width: 320px;
     min-height: var(--vh);

@@ -49,9 +49,17 @@
   }
 
   &__content {
-    h3 {
+    h3:not(.card__name) {
       margin-bottom: 8px;
     }
+  }
+
+  &__position {
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    margin-bottom: 32px;
   }
 
   @include media(mobile-l) {

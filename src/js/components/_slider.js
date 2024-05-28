@@ -26,3 +26,4 @@ let options = {
 };
 
 const swiperFeatured = new Swiper('.slider__featured', options);
+const swiperTeam = new Swiper('.slider__team', options);
