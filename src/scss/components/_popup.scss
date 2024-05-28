@@ -114,6 +114,9 @@
   }
 
   &__image {
+    max-width: 834px;
+    width: 100%;
+    margin-inline: auto;
     margin-bottom: clamp(32px, 3.4vw, 48px);
     border-radius: var(--radius-main);
     overflow: hidden;
@@ -127,6 +130,12 @@
     display: block;
     width: fit-content;
     margin-inline: auto;
+  }
+
+  @include media(desktop-wide, min) {
+    &__box {
+      max-width: 1010px;
+    }
   }
 
   @include media(tablet) {

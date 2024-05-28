@@ -2,7 +2,7 @@
 @use "../utils/mixins/"as*;
 
 .footer {
-  padding-bottom: clamp(10px, 1.8vw, 24px);
+  padding-bottom: clamp(0px, 1.8vw, 24px);
 
   &__wrapper,
   &__items {

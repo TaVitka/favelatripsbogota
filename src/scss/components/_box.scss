@@ -277,6 +277,18 @@
     }
   }
 
+  @include media(desktop-wide, min) {
+    &__inner {
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
   @include media(desktop) {
     &--bogota,
     &--favela,
@@ -291,13 +303,13 @@
     &__inner {
       &::before,
       &::after {
-        border-radius: var(--radius-l);
+        border-radius: var(--radius-m);
       }
     }
 
     &__content {
       padding: clamp(10px, 2.4vw, 32px);
-      border-radius: var(--radius-l);
+      border-radius: var(--radius-m);
     }
 
     &--asides {
@@ -334,8 +346,8 @@
     &--asides {
       .box__inner {
         min-height: 500px;
-        padding-top: clamp(100px, 25vw, 200px);
-        padding-bottom: clamp(100px, 25vw, 200px);
+        padding-top: clamp(100px, 40vw, 200px);
+        padding-bottom: clamp(100px, 40vw, 200px);
 
         &::before,
         &::after {
@@ -343,7 +355,7 @@
           bottom: unset;
           left: 0;
           right: 0;
-          height: clamp(200px, 40vw, 300px);
+          height: clamp(200px, 60vw, 300px);
           max-width: 100%;
         }
 
@@ -415,12 +427,8 @@
 
   @include media(mobile-m) {
     &--asides {
-      .box__inner {
-        min-height: 450px;
-
-        &::after {
-          background-position: top;
-        }
+      .box__inner::after {
+        background-position: top;
       }
     }
   }

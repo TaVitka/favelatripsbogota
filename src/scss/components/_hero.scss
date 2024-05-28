@@ -136,6 +136,12 @@
     &__inner {
       min-height: 600px;
     }
+
+    &--tours {
+      .hero__inner {
+        background-position: left center;
+      }
+    }
   }
 
   @include media(mobile-m) {

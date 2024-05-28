@@ -101,8 +101,14 @@
     }
   }
 
+  @include media(desktop-wide, min) {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
   @include media(tablet-wide) {
-    &__main {
+    &__main,
+    &__main:not(.hero__slider) {
       max-width: 93vw;
     }
 
