@@ -1,0 +1,28 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  padding-bottom: clamp(10px, 1.8vw, 24px);
+
+  &__wrapper,
+  &__items {
+    gap: 24px;
+  }
+
+  &__wrapper {
+    @include flex-sb;
+  }
+
+  &__items {
+    display: flex;
+  }
+
+  @include media(mobile-l) {
+    &__wrapper {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+
+}

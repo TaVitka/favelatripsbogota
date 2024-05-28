@@ -46,6 +46,7 @@ textarea {
 }
 
 .copyright {
+  display: block;
   font-weight: var(--fw-500);
   font-size: 16px;
   line-height: 1.21;
@@ -57,6 +58,7 @@ textarea {
 
   @include media(mobile-m) {
     line-height: 1.6;
+    text-align: center;
 
     br {
       display: block;
