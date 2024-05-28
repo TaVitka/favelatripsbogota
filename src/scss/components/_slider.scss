@@ -3,8 +3,8 @@
 
 .slider {
   &__inner {
-    display: flex;
-    gap: clamp(16px, 5vw, 74px)
+    @include flex-v-center;
+    gap: clamp(16px, 5.2vw, 78px)
   }
 
   &__name {
@@ -17,6 +17,7 @@
     h2 {
       width: fit-content;
       margin-inline: auto;
+      white-space: nowrap;
     }
   }
 
@@ -59,6 +60,12 @@
     }
   }
 
+  &--request {
+    .slider__name h2 {
+      margin-inline: 0;
+    }
+  }
+
   @include media(tablet-wide) {
     &__main {
       max-width: 93vw;
@@ -79,6 +86,7 @@
 
     &__inner {
       flex-direction: column;
+      align-items: flex-start;
     }
 
     &__name {
@@ -86,6 +94,7 @@
 
       h2 {
         width: 100%;
+        white-space: initial;
       }
 
       br {

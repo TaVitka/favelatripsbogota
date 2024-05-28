@@ -40,6 +40,10 @@
   }
 
   @include media(mobile-l) {
+    h2 {
+      text-align: left;
+    }
+
     &__grid {
       grid-template-columns: repeat(2, 1fr);
     }
