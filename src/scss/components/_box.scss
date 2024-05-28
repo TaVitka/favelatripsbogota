@@ -21,14 +21,24 @@
       width: 100%;
       border-radius: var(--radius-main);
     }
+
+    &::before {
+      left: -16px;
+    }
+
+    &::after {
+      right: -16px;
+    }
   }
 
   .box__content {
+    max-width: 492px;
     width: 100%;
+    background-color: var(--color-white);
     border-radius: var(--radius-main);
 
     h2 {
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     &--btn {
@@ -38,33 +48,61 @@
     }
   }
 
+  &__texts {
+    p:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+  }
+
   &--asides {
     .box__inner {
       min-height: 563px;
 
       &::before,
       &::after {
-        @include cover-background;
         max-width: 470px;
-      }
-
-      &::before {
-        background-image: url("../images/home/about/city.jpg");
-        left: -16px;
-      }
-
-      &::after {
-        background-image: url("../images/home/about/girl.jpg");
-        right: -16px;
       }
     }
 
     .box__content {
-      max-width: 502px;
       margin-inline: auto;
       padding: clamp(10px, 2.4vw, 32px);
       text-align: center;
-      background-color: var(--color-white);
+    }
+  }
+
+  &--left {
+    .box__inner {
+      &::before {
+        max-width: 800px;
+        left: -16px;
+      }
+    }
+
+    .box__content {
+      margin-inline: auto 0;
+      padding-inline: clamp(10px, 2.4vw, 32px) 0;
+      padding-block: clamp(10px, 2.4vw, 32px);
+    }
+  }
+
+  &--about {
+    .box__inner {
+      &::before {
+        background-image: url("../images/home/about/city.jpg");
+      }
+
+      &::after {
+        background-image: url("../images/home/about/girl.jpg");
+      }
+    }
+  }
+
+  &--discover {
+    .box__inner {
+      &::before {
+        background-image: url("../images/home/discover.jpg");
+      }
     }
   }
 
@@ -93,6 +131,12 @@
   }
 
   @include media(mobile-l) {
+    &__content {
+      .btn {
+        width: 100%;
+      }
+    }
+
     &--asides {
       .box__inner {
         min-height: 500px;
@@ -116,6 +160,25 @@
         &::after {
           bottom: 0;
         }
+      }
+    }
+
+    &--left {
+      .box__inner {
+        padding-top: calc(clamp(200px, 40vw, 300px) + 32px);
+
+        &::before {
+          left: 0;
+          right: 0;
+          bottom: unset;
+          height: clamp(200px, 40vw, 300px);
+          max-width: 100%;
+        }
+      }
+
+      .box__content {
+        max-width: 100%;
+        padding: clamp(10px, 2.4vw, 32px);
       }
     }
   }
