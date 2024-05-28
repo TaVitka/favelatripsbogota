@@ -3,7 +3,7 @@
 
 .hero {
   $root: &;
-  &:not(.hero--approach) {
+  &:not(.hero--approach, .hero--slider) {
     padding-top: 24px;
   }
 
@@ -83,6 +83,47 @@
       .desc {
         max-width: 555px;
       }
+    }
+  }
+
+  &--favelas {
+    .hero__content {
+      max-width: 1069px;
+
+      .desc {
+        max-width: 768px;
+      }
+    }
+  }
+
+  &--slider {
+    padding-bottom: calc(clamp(32px, 8vw, 112px) - clamp(0px, 2.4vw, 24px));
+    .hero__content {
+      max-width: 770px;
+    }
+
+    .desc {
+      max-width: 585px;
+    }
+
+    .hero__slides {
+      margin-bottom: clamp(32px, 3.4vw, 48px);
+    }
+  }
+
+  &--tourism {
+    .hero__content {
+      max-width: 832px;
+    }
+  }
+
+  &--community {
+    .hero__content {
+      max-width: 913px;
+    }
+
+    .desc {
+      max-width: 682px;
     }
   }
 

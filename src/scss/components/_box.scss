@@ -125,6 +125,34 @@
     }
   }
 
+  &--insights {
+    .box__inner {
+      &::before {
+        background-image: url("../images/favelas/insights/buildings.jpg");
+      }
+
+      &::after {
+        background-image: url("../images/favelas/insights/streetart.jpg");
+      }
+    }
+  }
+
+  &--ethical {
+    .box__inner {
+      &::before {
+        background-image: url("../images/tourism/ethical/city.jpg");
+      }
+
+      &::after {
+        background-image: url("../images/tourism/ethical/building.jpg");
+      }
+    }
+
+    .box__content {
+      padding-inline: clamp(10px, 2.4vw, 20px);
+    }
+  }
+
   &--values {
     .box__inner {
       &::before {
@@ -190,14 +218,72 @@
     }
   }
 
-  &--offers {
+  &--bogota,
+  &--favela {
+    .box__content {
+      padding-block: 0;
+    }
+  }
+
+  &--bogota {
+    .box__inner {
+      &::before {
+        background-image: url("../images/favelas/about.jpg");
+      }
+    }
+  }
+
+  &--favela {
+    .box__inner {
+      &::before {
+        background-image: url("../images/favelas/about-bottom.jpg");
+      }
+    }
+  }
+
+  &--conservation {
+    .box__inner {
+      &::before {
+        background-image: url("../images/tourism/conservation.jpg");
+      }
+    }
+
+    .box__content {
+      padding-inline: 10px 0;
+    }
+  }
+
+  &--offers,
+  &--stories {
     .box__content {
       max-width: 492px;
     }
+  }
 
+  &--offers {
     h3 {
       margin-bottom: 16px;
       width: 75%;
+    }
+  }
+
+  &--commitment {
+    .box__inner {
+      min-height: 615px;
+
+      &::before {
+        background-image: url("../images/tourism/commitment.jpg");
+      }
+    }
+  }
+
+  @include media(desktop) {
+    &--bogota,
+    &--favela,
+    &--conservation {
+      .box__content {
+        padding: clamp(10px, 2.4vw, 32px);
+      }
     }
   }
 
@@ -221,6 +307,16 @@
         &::before,
         &::after {
           max-width: 250px;
+        }
+      }
+    }
+
+    &--bogota,
+    &--favela,
+    &--conservation {
+      .box__inner {
+        &::before {
+          background-position: -130px center;
         }
       }
     }
@@ -280,23 +376,39 @@
       }
     }
 
-    &--story {
+    &--story,
+    &--commitment {
       .box__inner {
         min-height: auto;
+      }
+    }
 
+    &--story {
+      .box__inner {
         &::before {
           background-position: center 15%;
         }
       }
     }
 
-    &--offers {
+    &--offers,
+    &--stories {
       .box__content {
         max-width: 100%
       }
 
       h3 {
         width: 100%;
+      }
+    }
+
+    &--bogota,
+    &--favela,
+    &--conservation {
+      .box__inner {
+        &::before {
+          background-position: center;
+        }
       }
     }
   }

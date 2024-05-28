@@ -23,8 +23,11 @@
 
   &__main {
     position: relative;
-    max-width: 811px;
     width: 100%;
+
+    &:not(.hero__slider) {
+      max-width: 811px;
+    }
   }
 
   &__slide {
@@ -91,6 +94,13 @@
     }
   }
 
+  &--places {
+    .slider__arrows {
+      position: static;
+      margin-inline: auto;
+    }
+  }
+
   @include media(tablet-wide) {
     &__main {
       max-width: 93vw;
@@ -115,6 +125,7 @@
     }
 
     &__name {
+      max-width: 100%;
       width: 100%;
 
       h2 {
